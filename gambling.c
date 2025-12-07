@@ -119,6 +119,7 @@ void login_user() {
     }
 }
 
+
 void display_menu() {
     printf("\n\t\t\t[$$$] ATM [$$$]\n");
     printf("User: %s | Balance: $%.2f\n", currentUser.username, currentUser.balance);
@@ -129,6 +130,12 @@ void display_menu() {
     printf("4. Exit\n");
     printf("--------------------------\n");
 }
+
+
+
+
+
+
 
 void deposit() {
     double amount;
@@ -144,25 +151,61 @@ void deposit() {
     printf("\nDeposit successful. New balance: $%.2f\n", currentUser.balance);
 }
 
-void withdraw() {
-    double amount;
-    printf("\nEnter withdrawal amount: $");
 
-    if (scanf("%lf", &amount) != 1 || amount <= 0) {
-        printf("\n--==[ Invalid withdrawal amount. Please enter a positive number. ]==--\n");
-        while (getchar() != '\n');
-        return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+void withdraw() {
+   double amount;
+    printf("\ Enter withdrawal amount");
+
+    if (scanf("%lf", &amount) != 1 || <= 0 ){
+        printf("Invalid withdrawal amount);
+
     }
 
     if (amount > currentUser.balance) {
-        printf("\n--==[ Error: Insufficient funds. You only have $%.2f. ]==--\n",
-               currentUser.balance);
-        return;
-    }
+            printf(" Insufficient funds" );
 
-    currentUser.balance -= amount;
-    printf("\nWithdrawal successful. New balance: $%.2f\n", currentUser.balance);
+
+
+
+
+
+
 }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 char* get_symbol_name(int symbol_value) {
     switch (symbol_value) {
@@ -243,4 +286,5 @@ void cash_out() {
     currentUser.balance = 0;
     save_user_data();
 }
+
 
