@@ -243,3 +243,4 @@ void cash_out() {
     currentUser.balance = 0;
     save_user_data();
 }
+
